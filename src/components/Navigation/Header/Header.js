@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, makeStyles, Box, AppBar, Toolbar, Typography, Link } from "@material-ui/core";
+import { Button, makeStyles, Box, AppBar, Toolbar, Typography, Link, Grid } from "@material-ui/core";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -44,7 +44,7 @@ export default function Header(){
                 <Toolbar>
                     {/* For logo */}
                     {/* <img src = {Logo} className ={classes.logo} /> */}
-                    <Link href = '/landing'>
+                    <Link href = '/'>
                         <Typography 
                         variant = "h4"
                         style ={{fontFamily: 'DancingScript', color: 'black'}}>
@@ -55,12 +55,12 @@ export default function Header(){
                     <div className = {classes.sectionDesktop}>
                         
                         <Box
-                        style={{ width: "100%" }}
+                        style={{ width: "100%", marginLeft: '20%', paddingTop: '5%'}}
                         display="flex"
                         flexDirection="row"
                         p={1}>
-                            <Box className = {classes.appBarText}>    
-                                <Typography variant = "body1" style = {{marginTop: '5%'}} >
+                            <Box className = {classes.appBarText} >    
+                                <Typography variant = "body1" style = {{marginTop: '5%',}} >
                                     <Link href = "#" style = {{color:"black",}}>
                                         Wedding Suppliers
                                     </Link>
@@ -68,7 +68,7 @@ export default function Header(){
                             </Box>
                             <Box className = {classes.appBarText}>    
                                 <Typography variant = "body1" style = {{marginTop: '5%'}}>
-                                    <Link href = "#" style = {{color:"black"}}>
+                                    <Link href = "/venues" style = {{color:"black"}}>
                                         Wedding Venues
                                     </Link>
                                 </Typography>
@@ -80,7 +80,33 @@ export default function Header(){
                                     </Link>
                                 </Typography>
                             </Box>
-                            <Box>
+                            <Grid container direction = 'column'>
+                                <Grid
+                                container
+                                direction="row"
+                                justify="center"
+                                alignItems="center"
+                                >
+                                    <Grid item>
+                                        <Button className = {classes.button} href = "/login">
+                                            Login
+                                        </Button>
+                                    </Grid>
+                                    <Grid item>
+                                        <Button className = {classes.button} href = "/signup">
+                                            Signup
+                                        </Button>
+                                    </Grid>
+                                </Grid>
+                                <Grid item>
+                                    <Typography variant = "body2" style = {{marginTop: '0%', marginLeft:'20%'}}>
+                                        <Link href = "" style = {{color:"black"}}>
+                                            Are you a business? 
+                                        </Link>
+                                    </Typography>
+                                </Grid>
+                            </Grid>
+                            {/* <Box>
                                 <Button className = {classes.button} href = "/login">
                                     Login
                                 </Button>
@@ -89,7 +115,14 @@ export default function Header(){
                                 <Button className = {classes.button} href = "/signup">
                                     Signup
                                 </Button>
-                            </Box>
+                            </Box> */}
+                            {/* <Box className = {classes.appBarText}>     */}
+                                {/* <Typography variant = "body2" style = {{marginTop: '7%', marginLeft:'-20%'}}>
+                                    <Link href = "#" style = {{color:"black"}}>
+                                       Are you a business? 
+                                    </Link>
+                                </Typography> */}
+                            {/* </Box> */}
                         </Box>
                     </div>
                 </Toolbar>

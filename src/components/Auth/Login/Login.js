@@ -47,6 +47,7 @@ const useStyle = makeStyles((theme)=> ({
 
 export default function Login(){
     const classes = useStyle();
+    
     return(
         <div style = {{position: 'fixed'}}>
             
@@ -79,7 +80,7 @@ export default function Login(){
                     placeholder = "Password"
                     className = {classes.textField}
                 />
-                <Link href = "#">
+                <Link href = "">
                     <Typography variant = "body1" style ={{marginBottom: '0%', color: '#95A7B6'}} align = "right">
                         Forgot Password?
                     </Typography>

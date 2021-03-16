@@ -43,6 +43,11 @@ export const renderRoutes = (routes = []) => (
       exact: true,
       path: '/',
       component: lazy(() => import("./components/Landing/Landing"))
+    },
+    {
+      exact: true,
+      path: '/venues',
+      component: lazy(() => import("./components/Venues/Venue"))
     }
   ];
 
