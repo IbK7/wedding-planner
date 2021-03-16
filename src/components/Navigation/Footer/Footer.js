@@ -1,5 +1,5 @@
 import React from 'react';
-import {makeStyles} from '@material-ui/core';
+import {makeStyles, Typography, Link} from '@material-ui/core';
 
 const useStyle = makeStyles((theme) => ({
     appBar: {
@@ -19,7 +19,11 @@ export default function Footer(){
     return(
         <div className = {classes.appBar}>
             <div className = {classes.footer}>
-                
+                <Typography
+                    variant = "h4"
+                    style ={{fontFamily: 'DancingScript', color: 'white'}}>
+                        My Wedding Planner
+                    </Typography>
             </div>
         </div>
     )

@@ -199,11 +199,11 @@ export default function Landing(){
                 <Typography variant = 'h4' align = 'left' style ={{marginLeft: '1%', fontFamily: 'DancingScript', fontWeight: 'bold'}}>
                     Featured Suppliers
                 </Typography>
-                <div className = {classes.featuredCardGrid}>
-                <Grid container direction = 'row'>
+                <div >
+                <Grid container direction = 'row' className = {classes.featuredCardGrid}>
                     <Grid item lg = {6} className = {classes.card}>
                         <div>
-                            <div style = {{position: 'absolute', top: '84%', left: '1.5%', zIndex: '2', width: 'auto'}}>
+                            <div style = {{position: 'absolute', top: '70%', left: '1.5%', zIndex: '2', width: 'auto'}}>
                                 <Typography variant = 'h5' className = {classes.cardText}>
                                     Venues
                                 </Typography>
@@ -217,7 +217,7 @@ export default function Landing(){
                     <Grid container direction = 'column' lg ={3}>
                         <Grid item className = {classes.card}>
                         <div>
-                            <div style = {{position: 'absolute', top: '40%', right: '44%', zIndex: '2', width: 'auto'}}>
+                            <div style = {{position: 'absolute', top: '33.5%', right: '42.9%', zIndex: '2', width: 'auto'}}>
                                 <Typography variant = 'h5' className = {classes.cardText}>
                                     Florists
                                 </Typography>
@@ -231,7 +231,7 @@ export default function Landing(){
                         </Grid>
                         <Grid item className = {classes.card}>
                         <div>
-                            <div style = {{position: 'absolute', top: '84%', right: '44.5%', zIndex: '2', width: 'auto'}}>
+                            <div style = {{position: 'absolute', top: '70%', right: '43.5%', zIndex: '2', width: 'auto'}}>
                                 <Typography variant = 'h5' className = {classes.cardText}>
                                     Cakes
                                 </Typography>
@@ -246,7 +246,7 @@ export default function Landing(){
                     <Grid container direction = 'column' lg ={3}>
                         <Grid item className = {classes.card}>
                             <div>
-                                <div style = {{position: 'absolute', top: '40%', right: '20%', zIndex: '2', width: 'auto'}}>
+                                <div style = {{position: 'absolute', top: '33%', right: '18.5%', zIndex: '2', width: 'auto'}}>
                                     <Typography variant = 'h5' className = {classes.cardText}>
                                         Invites
                                     </Typography>
@@ -259,7 +259,7 @@ export default function Landing(){
                         </Grid>
                         <Grid item className = {classes.card}>
                         <div>
-                            <div  style = {{position: 'absolute', top: '84%', right: '19%', zIndex: '2', width: 'auto'}}>
+                            <div  style = {{position: 'absolute', top: '70.5%', right: '17.5%', zIndex: '2', width: 'auto'}}>
                                 <Typography variant = 'h5' className = {classes.cardText}>
                                     Favours
                                 </Typography>
@@ -289,8 +289,18 @@ export default function Landing(){
                         </Grid>
                     </Grid>
                 </Grid>
+                <div
+                style={{
+                  minWidth: "100vw",
+                  paddingTop: "0%",
+                  overflowX: "hidden",
+                }}
+              >
+                <Footer />
+              </div>
                 </div>
             </div>
+            
         </div>
     );
 }
