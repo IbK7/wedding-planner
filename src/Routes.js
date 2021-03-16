@@ -3,52 +3,97 @@ import { Switch, Route } from "react-router-dom";
 import LoadingScreen from "./components/LoadingScreen";
 
 export const renderRoutes = (routes = []) => (
-    <Suspense fallback={<LoadingScreen />}>
-      <Switch>
-        {routes.map((route, i) => {
-          //const Guard = route.guard || Fragment;
-          const Component = route.component;
-  
-          return (
-            <Route
-              key={i}
-              path={route.path}
-              exact={route.exact}
-              render={(props) =>
-                route.routes ? (
-                  renderRoutes(route.routes)
-                ) : (
-                  <Component {...props} />
-                )
-              }
-            />
-          );
-        })}
-      </Switch>
-    </Suspense>
-  );
+  <Suspense fallback={<LoadingScreen />}>
+    <Switch>
+      {routes.map((route, i) => {
+        //const Guard = route.guard || Fragment;
+        const Component = route.component;
 
-  const routes = [
-    {
-      exact: true,
-      path: '/login',
-      component: lazy(() => import("./components/Auth/Login/Login")),
-    },
-    {
-      exact: true,
-      path: '/signup',
-      component: lazy(() => import("./components/Auth/Signup/Signup"))
-    },
-    {
-      exact: true,
-      path: '/',
-      component: lazy(() => import("./components/Landing/Landing"))
-    },
-    {
-      exact: true,
-      path: '/venues',
-      component: lazy(() => import("./components/Venues/Venue"))
-    }
-  ];
+        return (
+          <Route
+            key={i}
+            path={route.path}
+            exact={route.exact}
+            render={(props) =>
+              route.routes ? (
+                renderRoutes(route.routes)
+              ) : (
+                <Component {...props} />
+              )
+            }
+          />
+        );
+      })}
+    </Switch>
+  </Suspense>
+);
 
-  export default routes;
+const routes = [
+  {
+    exact: true,
+    path: "/login",
+    component: lazy(() => import("./components/Auth/Login/Login")),
+  },
+  {
+    exact: true,
+    path: "/signup",
+    component: lazy(() => import("./components/Auth/Signup/Signup")),
+  },
+  {
+    exact: true,
+    path: "/",
+    component: lazy(() => import("./components/Landing/Landing")),
+  },
+  {
+    exact: true,
+    path: "/venues",
+    component: lazy(() => import("./components/Categories/Venue")),
+  },
+  {
+    exact: true,
+    path: "/florist",
+    component: lazy(() => import("./components/Categories/Florist")),
+  },
+  {
+    exact: true,
+    path: "/invites",
+    component: lazy(() => import("./components/Categories/Invites")),
+  },
+  {
+    exact: true,
+    path: "/cake",
+    component: lazy(() => import("./components/Categories/Cake")),
+  },
+  {
+    exact: true,
+    path: "/photography",
+    component: lazy(() => import("./components/Categories/Photographer")),
+  },
+  {
+    exact: true,
+    path: "/music",
+    component: lazy(() => import("./components/Categories/Music")),
+  },
+  {
+    exact: true,
+    path: "/favour",
+    component: lazy(() => import("./components/Categories/Favour")),
+  },
+  {
+    exact: true,
+    path: "/jewellery",
+    component: lazy(() => import("./components/Categories/Jewellery")),
+  },
+  {
+    exact: true,
+    path: "/catering",
+    component: lazy(() => import("./components/Categories/Cattering")),
+  },
+  {
+    exact: true,
+    path: "/suppliers",
+    component: lazy(() => import("./components/Suppliers/Supplier")),
+  },
+];
+
+export default routes;
