@@ -74,6 +74,57 @@ export const renderRoutes = (routes = []) => (
       path: '/shortlist',
       component: lazy(() => import("./components/ShortList/ShortList"))
     },
+    {
+      exact: true,
+      path: "/florist",
+      component: lazy(() => import("./components/Categories/Florist")),
+    },
+    {
+      exact: true,
+      path: "/invites",
+      component: lazy(() => import("./components/Categories/Invites")),
+    },
+    {
+      exact: true,
+      path: "/cake",
+      component: lazy(() => import("./components/Categories/Cake")),
+    },
+    {
+      exact: true,
+      path: "/photography",
+      component: lazy(() => import("./components/Categories/Photographer")),
+    },
+    {
+      exact: true,
+      path: "/music",
+      component: lazy(() => import("./components/Categories/Music")),
+    },
+    {
+      exact: true,
+      path: "/favour",
+      component: lazy(() => import("./components/Categories/Favour")),
+    },
+    {
+      exact: true,
+      path: "/jewellery",
+      component: lazy(() => import("./components/Categories/Jewellery")),
+    },
+    {
+      exact: true,
+      path: "/catering",
+      component: lazy(() => import("./components/Categories/Cattering")),
+    },
+    {
+      exact: true,
+      path: "/suppliers",
+      component: lazy(() => import("./components/Suppliers/Supplier")),
+    },
+    {
+      exact: true,
+      path: "/planning",
+      component: lazy(() => import("./components/Planner/Planning")),
+    },
   ];
 
   export default routes;
+

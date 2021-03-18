@@ -22,6 +22,7 @@ export default function Footer(){
                 <Typography
                     variant = "h5"
                     style ={{fontFamily: 'DancingScript', color: 'white', marginLeft: '2%'}}>
+
                         My Wedding Planner
                     </Typography>
             </div>

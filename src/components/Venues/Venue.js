@@ -1,8 +1,12 @@
 import React from 'react';
+import {makeStyles} from '@material-ui/core';
 import Header from '../Navigation/Header/Header';
 
-export default function Venue(){
+const useStyle = makeStyles((theme) => ({
 
+}));
+
+export default function Venue(){
     return (
         <div>
             <Header />

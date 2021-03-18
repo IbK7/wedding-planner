@@ -101,6 +101,7 @@ export default function Signup(){
                 style = {{backgroundColor: '#3B5998', marginBottom: "2%",}}
                 >
                     <img src = {Facebook} className = {classes.buttonIcons} alt=""></img>
+
                     Continue with Facebook
                 </Button>
                 <Button 
@@ -112,6 +113,7 @@ export default function Signup(){
                 </Button>
             </div>
             <img src = {Background} className = {classes.backgoundImage} alt=""></img>
+
         </div>
     );
 }

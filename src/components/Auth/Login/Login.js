@@ -94,6 +94,7 @@ export default function Login(){
                 style = {{backgroundColor: '#3B5998', marginBottom: "2%",}}
                 >
                     <img src = {Facebook} className = {classes.buttonIcons} alt=""></img>
+
                     Login with Facebook
                 </Button>
                 <Button 
@@ -105,6 +106,7 @@ export default function Login(){
                 </Button>
             </div>
             <img src = {Backkground} className ={classes.backgoundImage} alt=""></img>
+
         </div>
     )
 }

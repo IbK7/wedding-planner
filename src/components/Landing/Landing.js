@@ -141,6 +141,7 @@ export default function Landing(){
                     </Button>
                 </div>
                 <img src = {Background} className ={classes.backgoundImage} alt=""></img>
+
             </div>
             <div className = {classes.planningButtons}>
                 <Grid container direction = "row" justify = 'space-around' alignItems = 'center' style = {{overflowX: 'hidden'}}>
@@ -212,6 +213,7 @@ export default function Landing(){
                                 </Button>
                             </div>
                             <img src = {Venues} style ={{height: '70.5vh'}} alt="" />
+
                         </div>
                     </Grid>
                     <Grid container direction = 'column' lg ={3}>
@@ -226,6 +228,7 @@ export default function Landing(){
                                 </Button>
                             </div>
                             <img src = {Florists} className = {classes.cardImage} style ={{height: '35vh'}} alt="" />
+
                         </div>
                             
                         </Grid>
@@ -240,6 +243,7 @@ export default function Landing(){
                                 </Button>
                             </div>
                             <img src = {Cakes} style ={{height: '35vh'}} alt=""/>
+
                         </div>
                         </Grid>
                     </Grid>
@@ -255,6 +259,7 @@ export default function Landing(){
                                     </Button>
                                 </div>
                                 <img src = {Invites} style ={{height: '35vh'}} className = {classes.cardImage} alt="" />
+
                             </div>
                         </Grid>
                         <Grid item className = {classes.card}>
@@ -268,6 +273,7 @@ export default function Landing(){
                                 </Button>
                             </div>
                             <img src = {Favours} style ={{height: '35vh'}} className = {classes.cardImage} alt=""/>
+
                         </div>
                         {/* <div>
                             <Typography variant = 'h5' style = {{position: 'absolute', bottom: '15%', zIndex: '2'}}>
