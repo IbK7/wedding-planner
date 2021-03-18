@@ -48,7 +48,32 @@ export const renderRoutes = (routes = []) => (
       exact: true,
       path: '/venues',
       component: lazy(() => import("./components/Venues/Venue"))
-    }
+    },
+    {
+      exact: true,
+      path: '/home',
+      component: lazy(() => import("./components/Home/Home"))
+    },
+    {
+      exact: true,
+      path: '/guestlist',
+      component: lazy(() => import("./components/GuestList/GuestList"))
+    },
+    {
+      exact: true,
+      path: '/budget',
+      component: lazy(() => import("./components/Budget/Budget"))
+    },
+    {
+      exact: true,
+      path: '/checklist',
+      component: lazy(() => import("./components/CheckList/CheckList"))
+    },
+    {
+      exact: true,
+      path: '/shortlist',
+      component: lazy(() => import("./components/ShortList/ShortList"))
+    },
   ];
 
   export default routes;
