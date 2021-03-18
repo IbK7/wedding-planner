@@ -94,6 +94,11 @@ const routes = [
     path: "/suppliers",
     component: lazy(() => import("./components/Suppliers/Supplier")),
   },
+  {
+    exact: true,
+    path: "/planning",
+    component: lazy(() => import("./components/Planner/Planning")),
+  },
 ];
 
 export default routes;

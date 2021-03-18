@@ -84,7 +84,7 @@ export default function Header() {
               </Box>
               <Box className={classes.appBarText}>
                 <Typography variant="body1" style={{ marginTop: "5%" }}>
-                  <Link href="#" style={{ color: "black" }}>
+                  <Link href="/planning" style={{ color: "black" }}>
                     Planning Tools
                   </Link>
                 </Typography>
