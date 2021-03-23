@@ -91,7 +91,7 @@ export default function Jewellery() {
                 spacing={2}
               >
                 <Grid item lg={3}>
-                  <img src={item.Image} style={{ width: "90%" }} />
+                  <img src={item.Image} style={{ width: "90%" }} alt = ""/>
                 </Grid>
 
                 {/* Name/Title */}

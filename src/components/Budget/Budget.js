@@ -1,6 +1,6 @@
 import React from 'react'
 import {makeStyles} from '@material-ui/core/styles'
-import {InputAdornment, InputLabel, Menu, Select, TextField, Typography, FormControl, MenuItem, Button} from '@material-ui/core'
+import {InputAdornment, InputLabel, Select, TextField, Typography, FormControl, MenuItem, Button} from '@material-ui/core'
 import HomeHeader from '../Navigation/HomeHeader'
 import Footer from '../Navigation/Footer'
 
@@ -42,10 +42,10 @@ const useStyles = makeStyles((theme) => ({
 }))
 export default function Budget(){
     const classes = useStyles();
-    const [age, setAge] = React.useState('');
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
+//     const [age, setAge] = React.useState('');
+//   const handleChange = (event) => {
+//     setAge(event.target.value);
+//   };
     return(
         <div>
             <HomeHeader />

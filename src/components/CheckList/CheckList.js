@@ -1,6 +1,7 @@
 import React from 'react'
 import HomeHeader from '../Navigation/HomeHeader'
 import {makeStyles} from '@material-ui/core/styles'
+import { Grid, TextField, Button } from '@material-ui/core';
 
 const useStyles = makeStyles ((theme) => ({
     content: {
@@ -19,6 +20,15 @@ const useStyles = makeStyles ((theme) => ({
       // necessary for content to be below app bar
       ...theme.mixins.toolbar,
     },
+    button:{
+        padding: theme.spacing(1),
+        //marginTop: theme.spacing(2),
+        backgroundColor: "#8B5B6E",
+        color: 'white',
+        // '&:hover':{
+        //     backgroundColor: "#8B5B6E",
+        // }
+    },
 }))
 
 export default function CheckList(){
@@ -30,7 +40,20 @@ export default function CheckList(){
             <main className = {classes.content}>
                 <div className={classes.toolbar} /> 
                 <div className = {classes.mainContent}>
-                    
+                    <Grid container justify = 'center' alignItems = 'center'>
+                        <Grid item lg = {8} >
+                            <TextField 
+                            variant = 'outlined'
+                            label = 'Add new task'
+                            style = {{width: '90%'}}
+                            />
+                        </Grid>
+                        <Grid item>
+                            <Button className = {classes.button}>
+                                Add 
+                            </Button>
+                        </Grid>
+                    </Grid>
                 </div>
             </main>
         </div>

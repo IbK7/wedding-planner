@@ -97,7 +97,7 @@ export default function Supplier() {
             Welcome to My Wedding Planner, Plan your weddings for free
           </Typography>
         </div>
-        <img src={Background} className={classes.backgoundImage}></img>
+        <img src={Background} className={classes.backgoundImage} alt = ""></img>
       </div>
       <div>
         <Typography
@@ -168,6 +168,7 @@ export default function Supplier() {
                   width: "96%",
                   opacity: "40%",
                 }}
+                alt = ""
               />
             </div>
           </Grid>

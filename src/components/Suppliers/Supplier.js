@@ -96,7 +96,7 @@ export default function Supplier() {
             the best wedding suppliers all in one place.
           </Typography>
         </div>
-        <img src={Background} className={classes.backgoundImage}></img>
+        <img src={Background} className={classes.backgoundImage} alt = ""></img>
       </div>
       <div>
         <Typography
@@ -138,7 +138,7 @@ export default function Supplier() {
                   Search
                 </Button>
               </div>
-              <img src={Venues} style={{ height: "70.5vh" }} />
+              <img src={Venues} style={{ height: "70.5vh" }} alt = ""/>
             </div>
           </Grid>
           <Grid container direction="column" lg={3}>
@@ -168,6 +168,7 @@ export default function Supplier() {
                   src={Florists}
                   className={classes.cardImage}
                   style={{ height: "35vh" }}
+                  alt = ""
                 />
               </div>
             </Grid>
@@ -193,7 +194,7 @@ export default function Supplier() {
                     Search
                   </Button>
                 </div>
-                <img src={Cakes} style={{ height: "35vh" }} />
+                <img src={Cakes} style={{ height: "35vh" }} alt = ""/>
               </div>
             </Grid>
           </Grid>
@@ -224,6 +225,7 @@ export default function Supplier() {
                   src={Invites}
                   style={{ height: "35vh" }}
                   className={classes.cardImage}
+                  alt = ""
                 />
               </div>
             </Grid>
@@ -253,6 +255,7 @@ export default function Supplier() {
                   src={Favours}
                   style={{ height: "35vh" }}
                   className={classes.cardImage}
+                  alt = ""
                 />
               </div>
             </Grid>
@@ -293,6 +296,7 @@ export default function Supplier() {
                 src={DJ}
                 style={{ height: "35vh", width: "95%" }}
                 className={classes.cardImage}
+                alt = ""
               />
             </div>
           </Grid>
@@ -325,6 +329,7 @@ export default function Supplier() {
                 src={Photographer}
                 style={{ height: "35vh", width: "95%" }}
                 className={classes.cardImage}
+                alt = ""
               />
             </div>
           </Grid>
@@ -356,6 +361,7 @@ export default function Supplier() {
                 src={Jewellery}
                 style={{ height: "35vh", width: "95%" }}
                 className={classes.cardImage}
+                alt = ""
               />
             </div>
           </Grid>
@@ -387,6 +393,7 @@ export default function Supplier() {
                 src={Catering}
                 style={{ height: "35vh", width: "90.5%" }}
                 className={classes.cardImage}
+                alt = ""
               />
             </div>
           </Grid>

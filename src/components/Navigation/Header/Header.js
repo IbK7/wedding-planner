@@ -112,7 +112,7 @@ export default function Header() {
                     variant="body2"
                     style={{ marginTop: "0%", marginLeft: "20%" }}
                   >
-                    <Link href="" style={{ color: "black" }}>
+                    <Link href="/businesssignup" style={{ color: "black" }}>
                       Are you a business?
                     </Link>
                   </Typography>

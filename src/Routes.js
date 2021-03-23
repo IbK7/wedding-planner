@@ -47,7 +47,7 @@ export const renderRoutes = (routes = []) => (
     {
       exact: true,
       path: '/venues',
-      component: lazy(() => import("./components/Venues/Venue"))
+      component: lazy(() => import("./components/Categories/Venue"))
     },
     {
       exact: true,
@@ -124,6 +124,17 @@ export const renderRoutes = (routes = []) => (
       path: "/planning",
       component: lazy(() => import("./components/Planner/Planning")),
     },
+    {
+      exact: true,
+      path: "/businesslogin",
+      component: lazy(() => import("./components/Business/BusinessLogin")),
+    },
+    {
+      exact: true,
+      path: "/businesssignup",
+      component: lazy(() => import("./components/Business/BusinessSignup")),
+    },
+
   ];
 
   export default routes;

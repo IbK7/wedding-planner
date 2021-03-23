@@ -1,6 +1,6 @@
 import React from 'react'
 import {makeStyles} from '@material-ui/core/styles'
-import {Typography, Grid, Button, Divider} from '@material-ui/core'
+import {Typography, Grid, Button,} from '@material-ui/core'
 import ExploreCard from './ExploreCard'
 import Venue from '../../assets/Images/venues.jpg'
 import Florist from '../../assets/Images/florists.jpg'

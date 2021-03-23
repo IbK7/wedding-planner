@@ -1,14 +1,14 @@
 import React from 'react'
 import clsx from 'clsx';
 import {makeStyles, useTheme} from '@material-ui/core/styles'
-import {Drawer, AppBar, Toolbar, List, Typography, CssBaseline, Divider, IconButton, Link, Grid, Button, Icon} from '@material-ui/core';
+import {Drawer, AppBar, Toolbar, List, Typography, CssBaseline, Divider, IconButton, Link, Grid, Button,} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import { EditOutlined, AttachMoney, ExitToAppRounded, FavoriteRounded, HomeRounded, PeopleRounded, PlaylistAddCheckRounded, SearchRounded, SettingsRounded } from '@material-ui/icons';
+import { AttachMoney, ExitToAppRounded, FavoriteRounded, HomeRounded, PeopleRounded, PlaylistAddCheckRounded, SearchRounded, SettingsRounded } from '@material-ui/icons';
 import Edit from './Edit'
 
 const drawerWidth = 240;
@@ -93,8 +93,8 @@ export default function HomeHeader(){
     const classes = useStyles();
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
-    const [bride, setBride] = React.useState('Bride');
-    const [groom, setGroom] = React.useState('Groom')
+    //const [bride, setBride] = React.useState('Bride');
+    //const [groom, setGroom] = React.useState('Groom')
   
     const handleDrawerOpen = () => {
       setOpen(true);
@@ -181,7 +181,7 @@ export default function HomeHeader(){
                 <div className ={classes.contentHead}>
                     <span>
                         <Typography variant = 'h5' align = 'center' style = {{color: 'white', marginRight: '0%'}}>
-                            {bride} & {groom}
+                            Bride & Groom
                             
                         </Typography>
                         <Edit />
