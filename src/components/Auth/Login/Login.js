@@ -93,18 +93,20 @@ export default function Login(){
                 className = {classes.loginButtons} 
                 style = {{backgroundColor: '#3B5998', marginBottom: "2%",}}
                 >
-                    <img src = {Facebook} className = {classes.buttonIcons}></img>
+                    <img src = {Facebook} className = {classes.buttonIcons} alt=""></img>
+
                     Login with Facebook
                 </Button>
                 <Button 
                 variant = "outlined"
                 className = {classes.loginButtons} 
                 style = {{backgroundColor: 'white', borderColor: 'red', color: 'black' }}>
-                    <img src = {Google} className = {classes.buttonIcons}></img>
+                    <img src = {Google} className = {classes.buttonIcons} alt=""></img>
                     Login with Google
                 </Button>
             </div>
-            <img src = {Backkground} className ={classes.backgoundImage}></img>
+            <img src = {Backkground} className ={classes.backgoundImage} alt=""></img>
+
         </div>
     )
 }

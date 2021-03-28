@@ -100,18 +100,20 @@ export default function Signup(){
                 className = {classes.signUpButtons} 
                 style = {{backgroundColor: '#3B5998', marginBottom: "2%",}}
                 >
-                    <img src = {Facebook} className = {classes.buttonIcons}></img>
+                    <img src = {Facebook} className = {classes.buttonIcons} alt=""></img>
+
                     Continue with Facebook
                 </Button>
                 <Button 
                 variant = "outlined"
                 className = {classes.signUpButtons} 
                 style = {{backgroundColor: 'white', borderColor: 'red', color: 'black' }}>
-                    <img src = {Google} className = {classes.buttonIcons}></img>
+                    <img src = {Google} className = {classes.buttonIcons} alt=""></img>
                     Continue with Google
                 </Button>
             </div>
-            <img src = {Background} className = {classes.backgoundImage}></img>
+            <img src = {Background} className = {classes.backgoundImage} alt=""></img>
+
         </div>
     );
 }
