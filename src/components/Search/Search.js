@@ -1,7 +1,8 @@
 import React from "react";
 import { makeStyles, Button, Grid, Box, Typography } from "@material-ui/core";
+import {useHistory } from 'react-router-dom'
 import Header from "../Navigation/Header/Header";
-import Invite from "../../assets/Images/invites.jpg";
+import Cakes from "../../assets/Images/cakes.jpg";
 
 const useStyles = makeStyles((theme) => ({
   btn: {
@@ -23,42 +24,47 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Invites() {
+export default function Cake() {
   const classes = useStyles();
-
+  const history = useHistory();
   const data = [
     {
-      Name: "Paper & Rose",
-      Image: Invite,
-      Location: "Bedfordshire, England",
+      Name: "Vanilla Bean",
+      Type: 'Cake',
+      Image: Cakes,
+      Location: "Location",
       Number: "0123456789",
       Email: "abc@example.com",
     },
     {
-      Name: "Paper & Rose",
-      Image: Invite,
-      Location: "Bedfordshire, England",
+      Name: "Vanilla Bean",
+      Type: 'Cake',
+      Image: Cakes,
+      Location: "Location",
       Number: "0123456789",
       Email: "abc@example.com",
     },
     {
-      Name: "Paper & Rose",
-      Image: Invite,
-      Location: "Bedfordshire, England",
+      Name: "Vanilla Bean",
+      Type: "Cake",
+      Image: Cakes,
+      Location: "Location",
       Number: "0123456789",
       Email: "abc@example.com",
     },
     {
-      Name: "Paper & Rose",
-      Image: Invite,
-      Location: "Bedfordshire, England",
+      Name: "Vanilla Bean",
+      Type: "Cake",
+      Image: Cakes,
+      Location: "Location",
       Number: "0123456789",
       Email: "abc@example.com",
     },
     {
-      Name: "Paper & Rose",
-      Image: Invite,
-      Location: "Bedfordshire, England",
+      Name: "Vanilla Bean",
+      Type: "Cake",
+      Image: Cakes,
+      Location: "Location",
       Number: "0123456789",
       Email: "abc@example.com",
     },
@@ -77,7 +83,8 @@ export default function Invites() {
               color: "#8B5B6E",
             }}
           >
-            Wedding Invites & Stationery
+            Search Results
+
           </Typography>
         </div>
         {/* Body of the page with the list of items */}
@@ -86,30 +93,38 @@ export default function Invites() {
             <Box border={1} borderColor="#CBCBCB" className={classes.box}>
               <Grid
                 container
+                direction = 'row'
                 alignItems="center"
                 justify="space-around"
-                spacing={2}
+                spacing={1}
               >
-                <Grid item lg={3}>
+                <Grid item lg = {2} md = {2} sm = {10} xs = {10}>
                   <img src={item.Image} style={{ width: "90%" }} alt = ""/>
                 </Grid>
 
                 {/* Name/Title */}
-                <Grid item lg={2}>
+                <Grid item>
                   <Typography variant="h6">
                     <span style={{ fontWeight: "bold" }}>Name:</span> <br />
                     {item.Name}
                   </Typography>
                 </Grid>
+                
+                <Grid item>
+                  <Typography variant="h6">
+                    <span style={{ fontWeight: "bold" }}>Type:</span> <br />
+                    {item.Type}
+                  </Typography>
+                </Grid>
 
-                <Grid item lg={2}>
+                <Grid item>
                   <Typography variant="h6">
                     <span style={{ fontWeight: "bold" }}>Location:</span> <br />
                     {item.Location}
                   </Typography>
                 </Grid>
 
-                <Grid item lg={2}>
+                <Grid item>
                   <Typography variant="h6">
                     <span style={{ fontWeight: "bold" }}>Contact:</span> <br />
                     {item.Number}
@@ -117,21 +132,24 @@ export default function Invites() {
                 </Grid>
 
                 {/* Email*/}
-                <Grid item lg={2}>
+                <Grid item>
                   <Typography variant="h6">
                     <span style={{ fontWeight: "bold" }}>Email:</span> <br />
                     {item.Email}
                   </Typography>
                 </Grid>
 
-                <Grid item lg={1}>
+                <Grid item>
                   <Button
                     variant="contained"
                     className={classes.btn}
                     boxShadow={1}
                     style={{ background: "#D7A7AA", color: "white" }}
+                    onClick = {()=>{
+                      history.push('/supplier')
+                    }}
                   >
-                    Wishlist
+                    Learn More
                   </Button>
                 </Grid>
               </Grid>

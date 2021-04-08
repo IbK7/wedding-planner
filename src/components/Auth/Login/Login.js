@@ -1,32 +1,35 @@
-import React from 'react';
-import {makeStyles, Button, Typography, TextField, Link} from '@material-ui/core'
-import Facebook from '../../../assets/Icons/facebookLogo.jpg'
-import Google from '../../../assets/Icons/google-icon.svg'
+import React, { useCallback, useEffect } from 'react';
+import { makeStyles, Button, Typography, TextField } from '@material-ui/core'
 import Backkground from '../../../assets/Images/loginng1.jpg'
+import { useForm } from "react-hook-form"
+import { useDispatch, useSelector } from "react-redux"
+import { auth_actions } from "../../../redux"
+import { useHistory, Link } from "react-router-dom"
 
-const useStyle = makeStyles((theme)=> ({
+
+const useStyle = makeStyles((theme) => ({
     backgoundImage: {
         width: "100%",
-        height: "100vh",
+        height: "auto",
         position: "relative",
         top: "0%",
         left: "0%",
         zIndex: "0",
         opacity: '0.75',
-      },
-    button:{
+    },
+    button: {
         margin: theme.spacing(1),
         backgroundColor: "#8B5B6E",
         color: 'white',
     },
     loginButtons: {
-        color: 'white', 
+        color: 'white',
         width: '100%',
         padding: theme.spacing(1.5),
     },
-    loginForm:{
+    loginForm: {
         padding: theme.spacing(2),
-        width: '32%', 
+        width: '32%',
         backgroundColor: 'white',
         borderRadius: "3%",
         position: 'absolute',
@@ -36,7 +39,7 @@ const useStyle = makeStyles((theme)=> ({
     },
     textField: {
         width: "100%",
-        marginBottom: '2%',
+        marginBottom: '1.5em',
     },
     buttonIcons: {
         height: "36px",
@@ -45,67 +48,85 @@ const useStyle = makeStyles((theme)=> ({
     }
 }));
 
-export default function Login(){
+export default function Login() {
     const classes = useStyle();
-    
-    return(
-        <div style = {{position: 'fixed'}}>
-            
-            <div style = {{width: "100%", position: 'absolute', right: '0', zIndex: '1'}}>
-                <Link href = '/'>
-                    <Typography 
-                        variant = "h4"
-                        style ={{fontFamily: 'DancingScript', color: 'black', marginTop: '1%', marginLeft: '1%'}}>
-                            My Wedding Planner
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const user = useSelector(state => state.auth)
+    const { handleSubmit, errors, register, getValues } = useForm({ mode: "all" })
+
+    const login_handler = useCallback(() => {
+        const values = getValues()
+        dispatch(auth_actions.login(values))
+    }, [])
+
+    useEffect(() => {
+        if (user && user._id) {
+            history.push("/home")
+        }
+    }, [user])
+
+    return (
+        <div style={{ position: 'fixed' }}>
+            <div style={{ width: "100%", position: 'absolute', right: '0', zIndex: '1' }}>
+                <Link to='/'>
+                    <Typography
+                        variant="h4"
+                        style={{ fontFamily: 'DancingScript', color: 'black', marginTop: '1%', marginLeft: '1%' }}>
+                        My Wedding Planner
                     </Typography>
                 </Link>
-                <div align = "right" style ={{marginTop: "-2.75%"}}>
-                    <Button className = {classes.button} href ="/signup">
-                        Sign Up
-                    </Button>
+                <div align="right" style={{ marginTop: "-2.75%" }}>
+                    <Link to="/signup">
+                        <Button className={classes.button} >
+                            Sign Up
+                        </Button>
+                    </Link>
                 </div>
             </div>
-            
-            <div align = "center" className={classes.loginForm} >
-                <Typography variant = "h6" style = {{marginBottom: "2%", fontWeight: 'bold', fontFamily: 'DancingScript'}}>
+            <div align="center" className={classes.loginForm} >
+                <Typography variant="h6" style={{ marginBottom: "2%", fontWeight: 'bold', fontFamily: 'DancingScript' }}>
                     Log in to Your Account
                 </Typography>
                 <TextField
-                    variant = "outlined"
-                    placeholder = "Email Address"
-                    className = {classes.textField}
+                    variant="outlined"
+                    label="Email"
+                    name="email"
+                    inputRef={register({
+                        required: {
+                            value: true,
+                            message: "This field is required"
+                        }
+                    })}
+                    className={classes.textField}
+                    error={Boolean(errors.email)}
+                    helperText={errors.email ? errors.email.message : ""}
                 />
                 <TextField
-                    variant = "outlined"
-                    placeholder = "Password"
-                    className = {classes.textField}
+                    variant="outlined"
+                    label="Password"
+                    className={classes.textField}
+                    name="password"
+                    type="password"
+                    inputRef={register({
+                        required: {
+                            value: true,
+                            message: "This field is required"
+                        }
+                    })}
+                    error={Boolean(errors.password)}
+                    helperText={errors.password ? errors.password.message : ""}
                 />
-                <Link href = "">
-                    <Typography variant = "body1" style ={{marginBottom: '0%', color: '#95A7B6'}} align = "right">
+                <Link to="">
+                    <Typography variant="body1" style={{ marginBottom: '0%', color: '#95A7B6' }} align="right">
                         Forgot Password?
                     </Typography>
                 </Link>
-                <Button className = {classes.loginButtons} style = {{width: "100%", backgroundColor:"#8B5B6E", }}>
+                <Button onClick={handleSubmit(login_handler)} className={classes.loginButtons} style={{ width: "100%", backgroundColor: "#8B5B6E", }}>
                     Log In
                 </Button>
-                <hr style = {{marginTop: '5%', marginBottom: '5%'}}></hr>
-                <Button 
-                className = {classes.loginButtons} 
-                style = {{backgroundColor: '#3B5998', marginBottom: "2%",}}
-                >
-                    <img src = {Facebook} className = {classes.buttonIcons} alt=""></img>
-
-                    Login with Facebook
-                </Button>
-                <Button 
-                variant = "outlined"
-                className = {classes.loginButtons} 
-                style = {{backgroundColor: 'white', borderColor: 'red', color: 'black' }}>
-                    <img src = {Google} className = {classes.buttonIcons} alt=""></img>
-                    Login with Google
-                </Button>
             </div>
-            <img src = {Backkground} className ={classes.backgoundImage} alt=""></img>
+            <img src={Backkground} className={classes.backgoundImage} alt=""></img>
 
         </div>
     )

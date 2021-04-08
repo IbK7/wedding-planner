@@ -1,8 +1,9 @@
 import React from 'react';
-import {makeStyles, Button, Typography, TextField, Link} from '@material-ui/core'
+import { makeStyles, Button, Typography, TextField } from '@material-ui/core'
 import Backkground from '../../assets/Images/business.jpg'
+import {Link} from 'react-router-dom'
 
-const useStyle = makeStyles((theme)=> ({
+const useStyle = makeStyles((theme) => ({
     backgoundImage: {
         width: "100vw",
         height: "100vh",
@@ -11,20 +12,20 @@ const useStyle = makeStyles((theme)=> ({
         left: "0%",
         zIndex: "0",
         opacity: '0.75',
-      },
-    button:{
+    },
+    button: {
         margin: theme.spacing(1),
         backgroundColor: "#8B5B6E",
         color: 'white',
     },
     loginButtons: {
-        color: 'white', 
+        color: 'white',
         width: '100%',
         padding: theme.spacing(1.5),
     },
-    loginForm:{
+    loginForm: {
         padding: theme.spacing(2),
-        width: '32%', 
+        width: '32%',
         backgroundColor: 'white',
         borderRadius: "3%",
         position: 'absolute',
@@ -43,52 +44,54 @@ const useStyle = makeStyles((theme)=> ({
     }
 }));
 
-export default function BusinessLogin(){
+export default function BusinessLogin() {
     const classes = useStyle();
-    
-    return(
-        <div style = {{position: 'fixed'}}>
-            
-            <div style = {{width: "100%", position: 'absolute', right: '0', zIndex: '1'}}>
-                <Link href = '/'>
-                    <Typography 
-                        variant = "h4"
-                        style ={{fontFamily: 'DancingScript', color: 'black', marginTop: '1%', marginLeft: '1%'}}>
-                            My Wedding Planner
+
+    return (
+        <div style={{ position: 'fixed' }}>
+
+            <div style={{ width: "100%", position: 'absolute', right: '0', zIndex: '1' }}>
+                <Link to='/'>
+                    <Typography
+                        variant="h4"
+                        style={{ fontFamily: 'DancingScript', color: 'black', marginTop: '1%', marginLeft: '1%' }}>
+                        My Wedding Planner
                     </Typography>
                 </Link>
-                <div align = "right" style ={{marginTop: "-2.75%"}}>
-                    <Button className = {classes.button} href ="/signup">
-                        Sign Up
-                    </Button>
+                <div align="right" style={{ marginTop: "-2.75%" }}>
+                    <Link to = '/businesssignup'>
+                        <Button className={classes.button}>
+                            Sign Up
+                        </Button>
+                    </Link>
                 </div>
             </div>
-            
-            <div align = "center" className={classes.loginForm} >
-                <Typography variant = "h6" style = {{marginBottom: "2%", fontWeight: 'bold', fontFamily: 'DancingScript'}}>
+
+            <div align="center" className={classes.loginForm} >
+                <Typography variant="h6" style={{ marginBottom: "2%", fontWeight: 'bold', fontFamily: 'DancingScript' }}>
                     Log in to Your Account
                 </Typography>
                 <TextField
-                    variant = "outlined"
-                    placeholder = "Email Address"
-                    className = {classes.textField}
+                    variant="outlined"
+                    placeholder="Email Address"
+                    className={classes.textField}
                 />
                 <TextField
-                    variant = "outlined"
-                    placeholder = "Password"
-                    className = {classes.textField}
+                    variant="outlined"
+                    placeholder="Password"
+                    className={classes.textField}
                 />
-                <Link href = "">
-                    <Typography variant = "body1" style ={{marginBottom: '0%', color: '#95A7B6'}} align = "right">
+                <Link href="">
+                    <Typography variant="body1" style={{ marginBottom: '0%', color: '#95A7B6' }} align="right">
                         Forgot Password?
                     </Typography>
                 </Link>
-                <Button className = {classes.loginButtons} style = {{width: "100%", backgroundColor:"#8B5B6E", }}>
+                <Button className={classes.loginButtons} style={{ width: "100%", backgroundColor: "#8B5B6E", }}>
                     Log In
                 </Button>
-                
+
             </div>
-            <img src = {Backkground} className ={classes.backgoundImage} alt=""></img>
+            <img src={Backkground} className={classes.backgoundImage} alt=""></img>
 
         </div>
     )

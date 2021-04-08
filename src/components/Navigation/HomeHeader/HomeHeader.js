@@ -1,7 +1,8 @@
 import React from 'react'
 import clsx from 'clsx';
 import {makeStyles, useTheme} from '@material-ui/core/styles'
-import {Drawer, AppBar, Toolbar, List, Typography, CssBaseline, Divider, IconButton, Link, Grid, Button,} from '@material-ui/core';
+import {Drawer, AppBar, Toolbar, List, Typography, CssBaseline, Divider, IconButton, Grid, Button,} from '@material-ui/core';
+import {Link} from 'react-router-dom'
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
@@ -125,7 +126,7 @@ export default function HomeHeader(){
                     >
                     <MenuIcon />
                     </IconButton>
-                    <Link href = '/'>
+                    <Link to = '/'>
                         <Typography variant="h5" style = {{fontFamily: 'DancingScript', color: 'black'}}>
                             My Wedding Planner
                         </Typography>
@@ -155,10 +156,11 @@ export default function HomeHeader(){
                     {['Home', 'Search Suppliers', 'Guest List', 'Budget', 'CheckList'].map((text, index) => (
                     <ListItem button key={text}>  
                         <ListItemIcon>{
-                            index === 0 ? <HomeRounded className = {classes.drawerIcon} /> :(
-                                index === 1 ? <SearchRounded className = {classes.drawerIcon} />: (
-                                    index === 2 ? <PeopleRounded className = {classes.drawerIcon} />: (
-                                        index === 3 ? <AttachMoney className = {classes.drawerIcon} />: <PlaylistAddCheckRounded className = {classes.drawerIcon} />
+                            index === 0 ? (<Link to = '/home'><HomeRounded className = {classes.drawerIcon} /></Link>) :(
+                                index === 1 ? (<Link to = '/suppliers'><SearchRounded className = {classes.drawerIcon} /></Link>): (
+                                    index === 2 ? (<Link to = '/guestlist'><PeopleRounded className = {classes.drawerIcon} /></Link>): (
+                                        index === 3 ? (<Link to = '/budget'><AttachMoney className = {classes.drawerIcon} /></Link>): 
+                                        (<Link to = '/checklist'><PlaylistAddCheckRounded className = {classes.drawerIcon} /></Link>)
                             ))) 
                         }
                         </ListItemIcon>
@@ -168,9 +170,11 @@ export default function HomeHeader(){
                 </List>
                 <Divider />
                 <List>
-                    {['Settings', 'Log out'].map((text, index) => (
+                    {['Log out'].map((text, index) => (
                     <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <SettingsRounded /> : <ExitToAppRounded /> }</ListItemIcon>
+                        <ListItemIcon>
+                            <ExitToAppRounded />
+                        </ListItemIcon>
                         <ListItemText primary={text} />
                     </ListItem>
                     ))}
@@ -198,7 +202,8 @@ export default function HomeHeader(){
                     
                     <Grid container direction = 'row' justify = 'space-evenly' alignContent = 'center' style ={{marginTop: '1%'}}>
                         <Grid item>
-                            <Button variant = 'contained' className = {classes.toolButtons} href = '/home'>
+                            <Link to = '/home'>
+                            <Button variant = 'contained' className = {classes.toolButtons}>
                                 <div>
                                     <HomeRounded style = {{marginRight: '2%', marginBottom: '-3%'}} />
                                     Home
@@ -207,9 +212,11 @@ export default function HomeHeader(){
                                     </Typography>
                                 </div>
                             </Button>
+                            </Link>
                         </Grid>
                         <Grid item>
-                            <Button variant = 'contained' className = {classes.toolButtons} href = '/guestlist'>
+                            <Link to = '/guestlist'>
+                            <Button variant = 'contained' className = {classes.toolButtons} to = '/guestlist'>
                                 <div>
                                     <PeopleRounded style = {{marginRight: '2%', marginBottom: '-3%'}} />
                                     Guest List   
@@ -218,9 +225,11 @@ export default function HomeHeader(){
                                     </Typography>
                                 </div>
                             </Button>
+                            </Link>
                         </Grid>
                         <Grid item>
-                            <Button variant = 'contained' className = {classes.toolButtons} href = '/budget'>
+                            <Link to = '/budget'>
+                            <Button variant = 'contained' className = {classes.toolButtons} to = '/budget'>
                                 <div>
                                     <AttachMoney style = {{marginRight: '2%', marginBottom: '-5%'}} />
                                     Budget
@@ -229,20 +238,24 @@ export default function HomeHeader(){
                                     </Typography>
                                 </div>
                             </Button>
+                            </Link>
                         </Grid>
                         <Grid item>
-                            <Button variant = 'contained' className = {classes.toolButtons} href = '/checklist' >
+                            <Link to = '/checklist'>
+                            <Button variant = 'contained' className = {classes.toolButtons} to = '/checklist' >
                                 <div>
                                     <PlaylistAddCheckRounded style = {{marginRight: '2%', marginBottom: '-4%'}} />
-                                    Check List
+                                        Suppliers
                                     <Typography variant = 'body2'>
                                         Percentage completed
                                     </Typography>
                                 </div>
                             </Button>
+                            </Link>
                         </Grid>
                         <Grid item>
-                            <Button variant = 'contained' className = {classes.toolButtons} href = '/shortlist'>
+                            <Link to = '/shortlist'>
+                            <Button variant = 'contained' className = {classes.toolButtons} to = '/shortlist'>
                                 <div>
                                     <FavoriteRounded style = {{marginRight: '2%', marginBottom: '-3%'}}  />
                                     Shortlist
@@ -251,6 +264,7 @@ export default function HomeHeader(){
                                     </Typography>
                                 </div>
                             </Button>
+                            </Link>
                         </Grid>
                     </Grid>
                 </div>

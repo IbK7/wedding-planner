@@ -18,6 +18,7 @@ import DJ from "../../assets/Images/DJ.jpg";
 import Photographer from "../../assets/Images/photographer.jpg";
 import Jewellery from "../../assets/Images/jewellery.jpg";
 import Catering from "../../assets/Images/catering.jpeg";
+import { useHistory } from "react-router";
 
 const useStyle = makeStyles((theme) => ({
   backgoundImage: {
@@ -66,6 +67,7 @@ const useStyle = makeStyles((theme) => ({
 
 export default function Supplier() {
   const classes = useStyle();
+  const history = useHistory();
   return (
     <div>
       <Header />
@@ -96,7 +98,7 @@ export default function Supplier() {
             the best wedding suppliers all in one place.
           </Typography>
         </div>
-        <img src={Background} className={classes.backgoundImage} alt = ""></img>
+        <img src={Background} className={classes.backgoundImage} alt=""></img>
       </div>
       <div>
         <Typography
@@ -133,12 +135,12 @@ export default function Supplier() {
                 <Button
                   variant="outlined"
                   className={classes.button}
-                  href="/venues"
+                  onClick = {() => {history.push('/venues')}}
                 >
                   Search
                 </Button>
               </div>
-              <img src={Venues} style={{ height: "70.5vh" }} alt = ""/>
+              <img src={Venues} style={{ height: "70.5vh" }} alt="" />
             </div>
           </Grid>
           <Grid container direction="column" lg={3}>
@@ -159,7 +161,7 @@ export default function Supplier() {
                   <Button
                     variant="outlined"
                     className={classes.button}
-                    href="/florist"
+                    onClick = {() => {history.push('/florist')}}
                   >
                     Search
                   </Button>
@@ -168,7 +170,7 @@ export default function Supplier() {
                   src={Florists}
                   className={classes.cardImage}
                   style={{ height: "35vh" }}
-                  alt = ""
+                  alt=""
                 />
               </div>
             </Grid>
@@ -189,12 +191,12 @@ export default function Supplier() {
                   <Button
                     variant="outlined"
                     className={classes.button}
-                    href="/cake"
+                    onClick = {() => {history.push('/cake')}}
                   >
                     Search
                   </Button>
                 </div>
-                <img src={Cakes} style={{ height: "35vh" }} alt = ""/>
+                <img src={Cakes} style={{ height: "35vh" }} alt="" />
               </div>
             </Grid>
           </Grid>
@@ -216,7 +218,7 @@ export default function Supplier() {
                   <Button
                     variant="outlined"
                     className={classes.button}
-                    href="/invites"
+                    onClick = {() => {history.push('/invites')}}
                   >
                     Search
                   </Button>
@@ -225,7 +227,7 @@ export default function Supplier() {
                   src={Invites}
                   style={{ height: "35vh" }}
                   className={classes.cardImage}
-                  alt = ""
+                  alt=""
                 />
               </div>
             </Grid>
@@ -246,7 +248,7 @@ export default function Supplier() {
                   <Button
                     variant="outlined"
                     className={classes.button}
-                    href="/favour"
+                    onClick = {() => {history.push('/favour')}}
                   >
                     Search
                   </Button>
@@ -255,7 +257,7 @@ export default function Supplier() {
                   src={Favours}
                   style={{ height: "35vh" }}
                   className={classes.cardImage}
-                  alt = ""
+                  alt=""
                 />
               </div>
             </Grid>
@@ -287,7 +289,7 @@ export default function Supplier() {
                 <Button
                   variant="outlined"
                   className={classes.button}
-                  href="/music"
+                  onClick = {() => {history.push('/music')}}
                 >
                   Search
                 </Button>
@@ -296,7 +298,7 @@ export default function Supplier() {
                 src={DJ}
                 style={{ height: "35vh", width: "95%" }}
                 className={classes.cardImage}
-                alt = ""
+                alt=""
               />
             </div>
           </Grid>
@@ -320,7 +322,7 @@ export default function Supplier() {
                   style={{
                     marginTop: "23%",
                   }}
-                  href="/photography"
+                  onClick = {() => {history.push('/photography')}}
                 >
                   Search
                 </Button>
@@ -329,7 +331,7 @@ export default function Supplier() {
                 src={Photographer}
                 style={{ height: "35vh", width: "95%" }}
                 className={classes.cardImage}
-                alt = ""
+                alt=""
               />
             </div>
           </Grid>
@@ -352,7 +354,7 @@ export default function Supplier() {
                   variant="outlined"
                   className={classes.button}
                   style={{ marginTop: "23%" }}
-                  href="/jewellery"
+                  onClick = {() => {history.push('/jewellery')}}
                 >
                   Search
                 </Button>
@@ -361,7 +363,7 @@ export default function Supplier() {
                 src={Jewellery}
                 style={{ height: "35vh", width: "95%" }}
                 className={classes.cardImage}
-                alt = ""
+                alt=""
               />
             </div>
           </Grid>
@@ -384,7 +386,7 @@ export default function Supplier() {
                   variant="outlined"
                   className={classes.button}
                   style={{ marginTop: "23%" }}
-                  href="/catering"
+                  onClick = {() => {history.push('/catering')}}
                 >
                   Search
                 </Button>
@@ -393,7 +395,7 @@ export default function Supplier() {
                 src={Catering}
                 style={{ height: "35vh", width: "90.5%" }}
                 className={classes.cardImage}
-                alt = ""
+                alt=""
               />
             </div>
           </Grid>

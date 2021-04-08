@@ -11,6 +11,7 @@ import Header from "../Navigation/Header/Header";
 import Footer from "../Navigation/Footer/Footer";
 import Background from "../../assets/Images/planBack.jpg";
 import Venues from "../../assets/Images/plan_image.jpeg";
+import { useHistory } from "react-router";
 
 const useStyle = makeStyles((theme) => ({
   backgoundImage: {
@@ -76,6 +77,7 @@ const useStyle = makeStyles((theme) => ({
 
 export default function Supplier() {
   const classes = useStyle();
+  const history = useHistory(); 
   return (
     <div>
       <Header />
@@ -97,7 +99,7 @@ export default function Supplier() {
             Welcome to My Wedding Planner, Plan your weddings for free
           </Typography>
         </div>
-        <img src={Background} className={classes.backgoundImage} alt = ""></img>
+        <img src={Background} className={classes.backgoundImage} alt=""></img>
       </div>
       <div>
         <Typography
@@ -128,7 +130,7 @@ export default function Supplier() {
           below to join and you‘ll be planning in seconds!
         </Typography>
         <Button
-          href="/signup"
+          onClick = {() => {history.push('/signup')}}
           style={{
             backgroundColor: "#8B5B6E",
             color: "white",
@@ -168,7 +170,7 @@ export default function Supplier() {
                   width: "96%",
                   opacity: "40%",
                 }}
-                alt = ""
+                alt=""
               />
             </div>
           </Grid>
@@ -190,13 +192,6 @@ export default function Supplier() {
                       Track your wedding checklist with us and find the best for
                       you.{" "}
                     </Typography>
-                    <Button
-                      variant="outlined"
-                      className={classes.button}
-                      href="/favour"
-                    >
-                      Search
-                    </Button>
                   </div>
                 </Paper>
               </div>
@@ -218,13 +213,6 @@ export default function Supplier() {
                       Choose your team, the people who help make your dream
                       wedding come true.
                     </Typography>
-                    <Button
-                      variant="outlined"
-                      className={classes.button}
-                      href="/favour"
-                    >
-                      Search
-                    </Button>
                   </div>
                 </Paper>
               </div>
@@ -247,13 +235,6 @@ export default function Supplier() {
                     <Typography variant="h5">
                       Track all your guests and those who RSVP.{" "}
                     </Typography>
-                    <Button
-                      variant="outlined"
-                      className={classes.button}
-                      href="/favour"
-                    >
-                      Search
-                    </Button>
                   </div>
                 </Paper>
               </div>
@@ -275,13 +256,7 @@ export default function Supplier() {
                       Personalize your wedding while keeping a track of the
                       expenses.
                     </Typography>
-                    <Button
-                      variant="outlined"
-                      className={classes.button}
-                      href="/favour"
-                    >
-                      Search
-                    </Button>
+
                   </div>
                 </Paper>
               </div>

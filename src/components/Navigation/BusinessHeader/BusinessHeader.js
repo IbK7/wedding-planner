@@ -68,26 +68,19 @@ export default function Header() {
               flexDirection="row"
               p={1}
             >
-              <Box className={classes.appBarText}>
-                <Link to="/suppliers">
+                <Box className={classes.appBarText}>
+                <Link to="/businesshome">
                   <Typography variant="body1" style={{ marginTop: "5%",color: "black" }}>
-                    Wedding Suppliers
+                    Profile
                   </Typography>
                 </Link>
               </Box>
               <Box className={classes.appBarText}>
-                <Link to="/venues">
+                <Link to="/invoices">
                   <Typography variant="body1" style={{ marginTop: "5%",color: "black" }}>
-                    Wedding Venues
+                    Your Invoices
                   </Typography>
                 </Link>
-              </Box>
-              <Box className={classes.appBarText}>
-                <Link to="/planning" style={{  }}>
-                  <Typography variant="body1" style={{ marginTop: "5%",color: "black" }}>
-                    Planning Tools    
-                </Typography>
-              </Link>
               </Box>
               <Grid container direction="column">
                 <Grid
@@ -97,53 +90,15 @@ export default function Header() {
                   alignItems="center"
                 >
                   <Grid item>
-                    <Link to = '/login'>
+                    <Link to = '/'>
                       <Button className={classes.button}>
-                        Login
+                        Logout
                       </Button>
                     </Link>
                   </Grid>
-                  <Grid item>
-                    <Link to ="/signup">
-                      <Button className={classes.button}>
-                        Signup
-                      </Button>
-                    </Link>
-                  </Grid>
-                </Grid>
-                <Grid item>
-                  
-                <Link to="/businesssignup">
-                  <Typography
-                    variant="body2"
-                    style={{ marginTop: "0%", marginLeft: "20%", color: "black" }}
-                  >
-                      Are you a business?
-                    
-                  </Typography>
-                  </Link>
+
                 </Grid>
               </Grid>
-              {/* <Box>
->>>>>>> origin/frontend-arwah
-                                <Button className = {classes.button} to = "/login">
-                                    Login
-                                </Button>
-                            </Box>
-                            <Box>
-                                <Button className = {classes.button} to = "/signup">
-                                    Signup
-                                </Button>
-                            </Box> */}
-
-              {/* <Box className = {classes.appBarText}>     */}
-              {/* <Typography variant = "body2" style = {{marginTop: '7%', marginLeft:'-20%'}}>
-                                    <Link to = "#" style = {{color:"black"}}>
-                                       Are you a business? 
-                                    </Link>
-                                </Typography> */}
-
-              {/* </Box> */}
             </Box>
           </div>
         </Toolbar>

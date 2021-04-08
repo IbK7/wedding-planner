@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles, Button, Grid, Box, Typography } from "@material-ui/core";
 import Header from "../Navigation/Header/Header";
 import Cakes from "../../assets/Images/cakes.jpg";
+import { useSelector, useDispatch } from "react-redux"
+import { business_actions } from "../../redux"
 
 const useStyles = makeStyles((theme) => ({
   btn: {
@@ -26,43 +28,12 @@ const useStyles = makeStyles((theme) => ({
 export default function Cake() {
   const classes = useStyles();
 
-  const data = [
-    {
-      Name: "Vanilla Bean",
-      Image: Cakes,
-      Location: "Bedfordshire, England",
-      Number: "0123456789",
-      Email: "abc@example.com",
-    },
-    {
-      Name: "Vanilla Bean",
-      Image: Cakes,
-      Location: "Bedfordshire, England",
-      Number: "0123456789",
-      Email: "abc@example.com",
-    },
-    {
-      Name: "Vanilla Bean",
-      Image: Cakes,
-      Location: "Bedfordshire, England",
-      Number: "0123456789",
-      Email: "abc@example.com",
-    },
-    {
-      Name: "Vanilla Bean",
-      Image: Cakes,
-      Location: "Bedfordshire, England",
-      Number: "0123456789",
-      Email: "abc@example.com",
-    },
-    {
-      Name: "Vanilla Bean",
-      Image: Cakes,
-      Location: "Bedfordshire, England",
-      Number: "0123456789",
-      Email: "abc@example.com",
-    },
-  ];
+  const dispatch = useDispatch()
+  const data = useSelector(state => state.business)
+  useEffect(() => {
+    dispatch(business_actions.fetch_business({ business_type: "cakes" }))
+  }, [])
+
   return (
     <div>
       <Header />
@@ -81,7 +52,7 @@ export default function Cake() {
           </Typography>
         </div>
         {/* Body of the page with the list of items */}
-        {data.map((item) => {
+        {data.length > 0 ? data.map((item) => {
           return (
             <Box border={1} borderColor="#CBCBCB" className={classes.box}>
               <Grid
@@ -91,28 +62,28 @@ export default function Cake() {
                 spacing={2}
               >
                 <Grid item lg={3}>
-                  <img src={item.Image} style={{ width: "90%" }} alt = ""/>
+                  <img src={Cakes} style={{ width: "90%" }} alt="" />
                 </Grid>
 
                 {/* Name/Title */}
                 <Grid item lg={2}>
                   <Typography variant="h6">
                     <span style={{ fontWeight: "bold" }}>Name:</span> <br />
-                    {item.Name}
+                    {item.name}
                   </Typography>
                 </Grid>
 
                 <Grid item lg={2}>
                   <Typography variant="h6">
                     <span style={{ fontWeight: "bold" }}>Location:</span> <br />
-                    {item.Location}
+                    {item.user.address.name + ", " + item.user.address.city + ", " + item.user.address.state + " - " + item.user.address.zip + ", " + item.user.address.country}
                   </Typography>
                 </Grid>
 
                 <Grid item lg={2}>
                   <Typography variant="h6">
                     <span style={{ fontWeight: "bold" }}>Contact:</span> <br />
-                    {item.Number}
+                    {item.user.phone}
                   </Typography>
                 </Grid>
 
@@ -120,7 +91,7 @@ export default function Cake() {
                 <Grid item lg={2}>
                   <Typography variant="h6">
                     <span style={{ fontWeight: "bold" }}>Email:</span> <br />
-                    {item.Email}
+                    {item.user.email}
                   </Typography>
                 </Grid>
 
@@ -137,7 +108,9 @@ export default function Cake() {
               </Grid>
             </Box>
           );
-        })}
+        }) : (
+          <Box m={4}><Typography variant="h5" color="primary">There are no Cake Businesses Available</Typography></Box>
+        )}
       </div>
       <div className={classes.appBar}>
         <div className={classes.footer}>
